@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{FF6D8B1D-46DD-49C2-BAF6-90C76735F269}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>HaberPortali.BLL</RootNamespace>
+    <AssemblyName>HaberPortali.BLL</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controller\FotografController.cs" />
+    <Compile Include="Controller\HaberController.cs" />
+    <Compile Include="Controller\KategoriController.cs" />
+    <Compile Include="Controller\YazarController.cs" />
+    <Compile Include="Controller\YorumController.cs" />
+    <Compile Include="IServices\IBaseServices\IServices.cs" />
+    <Compile Include="IServices\IFotografServices.cs" />
+    <Compile Include="IServices\IHaberServices.cs" />
+    <Compile Include="IServices\IKategoriServices.cs" />
+    <Compile Include="IServices\IYazarServices.cs" />
+    <Compile Include="IServices\IYorumServices.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\ServicesBase.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\HaberPortali.Core\HaberPortali.Core.csproj">
+      <Project>{3F05B1A2-DA36-4049-B3E9-DE415E913457}</Project>
+      <Name>HaberPortali.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HaberPortali.DAL\HaberPortali.DAL.csproj">
+      <Project>{F363B4CD-B491-4600-B689-32F5826A8783}</Project>
+      <Name>HaberPortali.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HaberPortali.Entity\HaberPortali.Entity.csproj">
+      <Project>{1EC12032-91D8-4D41-9EA5-5D445C9E10AA}</Project>
+      <Name>HaberPortali.Entity</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
